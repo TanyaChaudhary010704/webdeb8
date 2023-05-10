@@ -159,7 +159,11 @@
         return false;
       }
       var pass = document.getElementById("pass");
-      if (pass.value.trim().length < 8) {
+      if (
+        !pass.value.match(uppercase) &&
+        !pass.value.match(numeric) &&
+        pass.value.trim().length < 8
+      ) {
         document.getElementsByClassName("formerror")[4].innerHTML = "Enter a valid password";
         return false;
       }
@@ -173,6 +177,12 @@
 
     }
     else {
+            console.log("First Name: " + name.value);
+            console.log("Last Name: " + lname.value);
+            console.log("Phone: " + number.value);
+            console.log("Email: " + email.value);
+            console.log("Password: " + pass.value);
+            alert("Form submitted successfully");
       return true;
     }
   }
