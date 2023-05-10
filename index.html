@@ -159,6 +159,8 @@
         return false;
       }
       var pass = document.getElementById("pass");
+      var uppercase = /[A-Z]/g;
+      var numeric = /[0-9]/g;
       if (
         !pass.value.match(uppercase) &&
         !pass.value.match(numeric) &&
