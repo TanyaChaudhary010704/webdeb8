@@ -159,14 +159,28 @@
         return false;
       }
       var pass = document.getElementById("pass");
-      var uppercase = /[A-Z]/g;
-      var numeric = /[0-9]/g;
       if (
-        !pass.value.match(uppercase) &&
-        !pass.value.match(numeric) &&
         pass.value.trim().length < 8
       ) {
-        document.getElementsByClassName("formerror")[4].innerHTML = "Enter a valid password";
+        document.getElementsByClassName("formerror")[4].innerHTML =
+          "Enter atlest 8 characters";
+        return false;
+      }
+      var uppercase = /[A-Z]/g;     
+      if (
+        !pass.value.match(uppercase)
+      ) 
+      {
+        document.getElementsByClassName("formerror")[4].innerHTML =
+          "Include uppercase characters";
+        return false;
+      }
+      var numeric = /[0-9]/g;
+      if (
+        !pass.value.match(numeric)
+      ) {
+        document.getElementsByClassName("formerror")[4].innerHTML =
+          "Include a numeric values";
         return false;
       }
       var email = document.getElementById("email");
